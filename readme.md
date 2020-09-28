@@ -1,14 +1,14 @@
-# ||l pipets
+# ||l or-pipets
 
-![pipets logo](./images/logo.jpeg)
+![or-pipets logo](./images/logo.jpeg)
 
-![lint](https://github.com/orlovedev/pipets/workflows/lint/badge.svg)
-![ava](https://github.com/orlovedev/pipets/workflows/AVA/badge.svg)
+![lint](https://github.com/orlovedev/or-pipets/workflows/lint/badge.svg)
+![ava](https://github.com/orlovedev/or-pipets/workflows/AVA/badge.svg)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/47fea726a5dfd86413cf/maintainability)](https://codeclimate.com/github/orlovedev/pipets/maintainability)
-[![codecov](https://codecov.io/gh/orlovedev/pipets/branch/main/graph/badge.svg)](https://codecov.io/gh/orlovedev/pipets)
+[![Maintainability](https://api.codeclimate.com/v1/badges/47fea726a5dfd86413cf/maintainability)](https://codeclimate.com/github/orlovedev/or-pipets/maintainability)
+[![codecov](https://codecov.io/gh/orlovedev/or-pipets/branch/main/graph/badge.svg)](https://codecov.io/gh/orlovedev/or-pipets)
 
-[![bundlephobia: minzip](https://img.shields.io/bundlephobia/minzip/pipets)](https://bundlephobia.com/result?p=pipets)
+[![bundlephobia: minzip](https://img.shields.io/bundlephobia/minzip/or-pipets)](https://bundlephobia.com/result?p=or-pipets)
 
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
@@ -30,13 +30,13 @@ This package provides two constructs - `Pipe` and `AsyncPipe`. `AsyncPipe` provi
 ## Installation
 
 ```sh
-yarn add pipets
+yarn add or-pipets
 ```
 
 or
 
 ```sh
-npm i -S pipets
+npm i -S or-pipets
 ```
 
 ## Examples
@@ -49,7 +49,7 @@ Suggests you ideas in case you get bored.
 import { EventEmitter } from 'events'
 // You also need node-fetch for this to work
 import fetch, { Response } from 'node-fetch'
-import { AsyncPipe } from 'pipets'
+import { AsyncPipe } from 'or-pipets'
 
 const emitter = new EventEmitter()
 
@@ -74,7 +74,7 @@ setTimeout(() => emitter.emit('bored'), 300)
 Adds 10 to the number you provide as a CLI argument.
 
 ```typescript
-import { Pipe } from 'pipets'
+import { Pipe } from 'or-pipets'
 
 // Start with removing the first two strings in the argv
 Pipe.of((argv: string[]) => argv.slice(2))
@@ -100,7 +100,7 @@ Welcomes you to localhost:3000.
 
 ```typescript
 import * as express from 'express'
-import { Pipe } from 'pipets'
+import { Pipe } from 'or-pipets'
 
 const app = express()
 

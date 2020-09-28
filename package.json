@@ -1,5 +1,5 @@
 {
-	"name": "pipets",
+	"name": "or-pipets",
 	"description": "Typed pipeable interface for imperative sequences in FP.",
 	"version": "0.0.0",
 	"main": "index.js",
@@ -9,14 +9,14 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"repository": "https://github.com/orlovedev/pipets.git",
+	"repository": "https://github.com/orlovedev/or-pipets.git",
 	"author": "Sergei Orlov <orlove.dev@gmail.com> (https://orlove.dev/)",
 	"keywords": [],
 	"license": "MIT",
-	"homepage": "https://github.com/orlovedev/pipets",
+	"homepage": "https://github.com/orlovedev/or-pipets",
 	"bugs": {
 		"email": "orlove.dev@gmail.com",
-		"url": "https://github.com/orlovedev/pipets/issues"
+		"url": "https://github.com/orlovedev/or-pipets/issues"
 	},
 	"scripts": {
 		"start": "ts-node src/index.ts",
