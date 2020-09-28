@@ -1,4 +1,4 @@
-# ||l or-pipets
+# ||pipets
 
 ![or-pipets logo](./images/logo.jpeg)
 
