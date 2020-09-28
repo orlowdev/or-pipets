@@ -1,6 +1,6 @@
 {
-	"name": "template",
-	"description": "description",
+	"name": "pipets",
+	"description": "Typed pipeable interface for imperative sequences in FP.",
 	"version": "0.0.0",
 	"main": "index.js",
 	"engines": {
@@ -9,14 +9,14 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"repository": "https://github.com/orlovedev/template.git",
+	"repository": "https://github.com/orlovedev/pipets.git",
 	"author": "Sergei Orlov <orlove.dev@gmail.com> (https://orlove.dev/)",
 	"keywords": [],
 	"license": "MIT",
-	"homepage": "https://github.com/orlovedev/template",
+	"homepage": "https://github.com/orlovedev/pipets",
 	"bugs": {
 		"email": "orlove.dev@gmail.com",
-		"url": "https://github.com/orlovedev/template/issues"
+		"url": "https://github.com/orlovedev/pipets/issues"
 	},
 	"scripts": {
 		"start": "ts-node src/index.ts",
@@ -76,13 +76,18 @@
 		"rules": {
 			"unicorn/no-reduce": "off",
 			"unicorn/no-fn-reference-in-iterator": "off",
+			"unicorn/import-index": "off",
 			"unicorn/no-process-exit": "off",
 			"@typescript-eslint/no-unnecessary-type-arguments": "off",
 			"@typescript-eslint/no-invalid-void-type": "off",
 			"@typescript-eslint/no-unused-expressions": "off",
 			"@typescript-eslint/no-var-requires": "off",
+			"@typescript-eslint/no-unused-vars": "off",
+			"@typescript-eslint/consistent-type-assertions": "off",
+			"@typescript-eslint/await-thenable": "off",
 			"prefer-destructuring": "off",
 			"no-eq-null": "off",
+			"no-await-in-loop": "off",
 			"eqeqeq": "off"
 		}
 	},
