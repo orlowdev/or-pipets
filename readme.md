@@ -5,7 +5,7 @@
 ![lint](https://github.com/orlovedev/or-pipets/workflows/lint/badge.svg)
 ![ava](https://github.com/orlovedev/or-pipets/workflows/AVA/badge.svg)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/47fea726a5dfd86413cf/maintainability)](https://codeclimate.com/github/orlovedev/or-pipets/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0a0a718d9df2943866b4/maintainability)](https://codeclimate.com/github/orlovedev/or-pipets/maintainability)
 [![codecov](https://codecov.io/gh/orlovedev/or-pipets/branch/main/graph/badge.svg)](https://codecov.io/gh/orlovedev/or-pipets)
 
 [![bundlephobia: minzip](https://img.shields.io/bundlephobia/minzip/or-pipets)](https://bundlephobia.com/result?p=or-pipets)
