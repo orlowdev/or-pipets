@@ -39,12 +39,6 @@ export interface IPipeStatic {
 	empty: <TContext, TProcess = TContext>() => IPipe<TContext, TProcess>
 }
 
-type GeneralizedPipe<T, TContext, TResult> = T extends { [_async]: true }
-	? IAsyncPipe<TContext, TResult>
-	: T extends { [_async]: false }
-	? IPipe<TContext, TResult>
-	: never
-
 export interface IPipe<TContext, TProcess = TContext> {
 	[_async]: false
 	[_fs]: Array<UnaryFunction<any>>
@@ -53,9 +47,7 @@ export interface IPipe<TContext, TProcess = TContext> {
 	pipeExtend: <TNewContext>(
 		f: UnaryFunction<TContext, TNewContext | void>,
 	) => IPipe<TContext extends TNewContext ? TContext : TContext & TNewContext, TProcess>
-	concat: <TOtherContext, TOther extends IPipe<TOtherContext, any> | IAsyncPipe<TOtherContext, any>>(
-		other: TOther,
-	) => GeneralizedPipe<TOther, TOtherContext, TProcess>
+	concat: <TOtherContext>(other: IPipe<TOtherContext, TContext>) => IPipe<TOtherContext, TProcess>
 	process: (initialContext?: TProcess) => TContext
 }
 
@@ -73,10 +65,7 @@ export const pipe = <TContext, TProcess = TContext>(
 	pipe: (f) => Pipe.from(...fs, f),
 	pipeTap: (f) => Pipe.from(...fs, tap(f)),
 	pipeExtend: (f) => Pipe.from(...fs, extendWith(f)),
-	concat: (other) =>
-		other[_async]
-			? AsyncPipe.from(...fs.concat(other[_fs]))
-			: (Pipe.from(...fs.concat(other[_fs])) as any),
+	concat: (other) => Pipe.from(...fs.concat(other[_fs])) as any,
 	process: (initialContext) =>
 		(fs.reduce((result, f) => f(result), initialContext) as unknown) as TContext,
 })

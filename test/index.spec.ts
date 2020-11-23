@@ -101,8 +101,8 @@ test('Pipe associativity (Semigroup)', (t) => {
 })
 
 test('Pipe left identity (Monoid)', (t) => {
-	t.is(Pipe.empty().concat(Pipe.of(fn1)).process(1), Pipe.of(fn1).process(1))
-	t.deepEqual(Pipe.empty().concat(Pipe.of(efn1)).process(), Pipe.of(efn1).process())
+	t.is(Pipe.empty<any>().concat(Pipe.of(fn1)).process(1), Pipe.of(fn1).process(1))
+	t.deepEqual(Pipe.empty<any>().concat(Pipe.of(efn1)).process(), Pipe.of(efn1).process())
 })
 
 test('Pipe right identity (Monoid)', (t) => {
@@ -259,10 +259,16 @@ test('AsyncPipe concat with type transformations preserves the process arg type'
 })
 
 test('AsyncPipe.pipeExtendP extends previous context with its result', async (t) => {
-	t.deepEqual(await AsyncPipe.of(aefn1).pipeExtendP(aefn2).pipeTapP(console.log).processP(), {
-		x: 1,
-		y: 2,
-	})
+	t.deepEqual(
+		await AsyncPipe.of(aefn1)
+			.pipeExtendP(aefn2)
+			.pipeTapP(() => {})
+			.processP(),
+		{
+			x: 1,
+			y: 2,
+		},
+	)
 })
 
 test('AsyncPipe.pipeP ends the extension', async (t) => {
@@ -281,10 +287,6 @@ test('AsyncPipe.extendPipeP extends previous context with its result', async (t)
 			.processP(),
 		{ x: 1, y: 2 },
 	)
-})
-
-test('pipe.concat(asyncPipe) returns an AsyncPipe', async (t) => {
-	t.is(await Pipe.of(fn1).concat(AsyncPipe.of(afn1)).processP(1), 3)
 })
 
 test('asyncPipe.concat(pipe) returns an AsyncPipe', async (t) => {
