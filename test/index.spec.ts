@@ -262,7 +262,7 @@ test('AsyncPipe.pipeExtendP extends previous context with its result', async (t)
 	t.deepEqual(
 		await AsyncPipe.of(aefn1)
 			.pipeExtendP(aefn2)
-			.pipeTapP(() => {})
+			.pipeTapP(() => null)
 			.processP(),
 		{
 			x: 1,
