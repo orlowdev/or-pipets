@@ -16,3 +16,5 @@ tsconfig.tsbuildinfo
 changelog.md
 .commitlintrc
 docs
+images
+readme.md
